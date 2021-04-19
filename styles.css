@@ -1,0 +1,112 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: #2A2A3B;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes cardhover {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, -5%, 0px);
+        background-color: #2E2E41;
+        box-shadow: 14px 10px 40px -9px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 14px 10px 40px -9px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 14px 10px 40px -9px rgba(0, 0, 0, 0.75);
+    }
+}
+
+.orange-line {
+    background-color: #E89873;
+    width: 20px;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    left: calc(50% - 10px);
+}
+
+.container {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.card {
+    width: 350px;
+    min-height: 100px;
+    background: rgba( 120, 120, 159, 0.20);
+    /* box-shadow: 0 8px 32px 0 rgba(20, 20, 20, 0.37); */
+    backdrop-filter: blur( 20.0px);
+    -webkit-backdrop-filter: blur( 20.0px);
+    border-radius: 10px;
+    color: #B6B1CB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    margin: 10px;
+}
+
+.card:hover {
+    cursor: default;
+    animation-name: cardhover;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+.card>h3 {
+    margin-top: 0;
+}
+
+.card>p {
+    font-size: small;
+    margin-bottom: 30px;
+}
+
+.card:nth-child(odd) {
+    grid-column: 4/span 5;
+}
+
+.card:nth-child(even) {
+    grid-column: 6/span 7;
+}
+
+.card-button {
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 20px;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-button:focus {
+    outline: none;
+}
+
+.card-button.filled {
+    background-color: #E89873;
+    color: white;
+}
+
+.card-button.outline {
+    background-color: transparent;
+    color: #E89873;
+    border: 1px solid #E89873;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
